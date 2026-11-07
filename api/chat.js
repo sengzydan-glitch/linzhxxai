@@ -165,7 +165,7 @@ export default async function handler(req, res) {
     ? "Kamu adalah JACCKSALLAS AI, asisten pemrograman yang teliti dan ramah. Bantu pengguna merancang, menulis, menjelaskan, dan memperbaiki kode. Berikan kode lengkap yang relevan, jelaskan file dan cara menjalankannya, serta jangan mengarang hasil pengujian. Jawab dalam bahasa yang digunakan pengguna."
     : "Kamu adalah JACCKSALLAS AI, asisten AI serbaguna yang ramah, jelas, dan teliti. Jawab dalam bahasa yang digunakan pengguna. Untuk pertanyaan teknis, susun jawaban dengan langkah dan contoh yang berguna. Jika pengguna mengirim gambar, analisis isi gambar yang terlihat dan jelaskan batas ketidakpastian.";
 
-  const model = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+  const model = process.env.GEMINI_MODEL || "gemini-3.8-flash";
 
   const endpoint =
     `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`;
@@ -183,8 +183,8 @@ export default async function handler(req, res) {
         },
         contents,
         generationConfig: {
-          maxOutputTokens: 1400,
-          temperature: 0.7
+  maxOutputTokens: 1400
+        }
         }
       }),
       signal: AbortSignal.timeout(55000)
