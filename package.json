@@ -1,0 +1,10 @@
+{
+  "name": "jaccksallas-ai",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "JACCKSALLAS AI - OpenAI Responses API on Vercel",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}

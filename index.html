@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07110c">
+  <meta name="description" content="JACCKSALLAS AI — personal AI chat workspace.">
+  <title>JACCKSALLAS AI</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">J<span>J</span></div>
+        <div class="brand-copy"><strong>JACCKSALLAS</strong><small>AI WORKSPACE</small></div>
+        <button class="icon-btn mobile-close" id="closeSidebar" aria-label="Tutup menu">×</button>
+      </div>
+
+      <button class="new-chat-btn" id="newChatBtn"><span>＋</span> Chat baru</button>
+
+      <div class="side-label">WORKSPACE</div>
+      <button class="nav-item active" id="allChatsBtn"><span>▤</span> Semua percakapan</button>
+      <button class="nav-item" id="codeModeNav"><span>⌘</span> Coding assistant</button>
+
+      <div class="history-head">
+        <span class="side-label">RIWAYAT CHAT</span>
+        <button class="tiny-btn" id="clearHistoryBtn" title="Hapus semua riwayat">Hapus</button>
+      </div>
+      <div class="history-list" id="historyList"></div>
+
+      <div class="sidebar-bottom">
+        <div class="status-line"><span class="status-dot"></span> API workspace</div>
+        <div class="profile">
+          <div class="avatar">J</div>
+          <div><strong>JACCKSALLAS AI</strong><small>Personal workspace</small></div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="mobile-scrim" id="mobileScrim"></div>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="icon-btn menu-btn" id="openSidebar" aria-label="Buka menu">☰</button>
+          <div class="top-title"><span class="live-dot"></span><strong>JACCKSALLAS AI</strong><span class="top-divider">/</span><span id="modeLabel">General chat</span></div>
+        </div>
+        <div class="topbar-right">
+          <span class="secure-label"><span>◆</span> PRIVATE API KEY</span>
+          <button class="icon-btn" id="newChatTop" title="Chat baru">＋</button>
+        </div>
+      </header>
+
+      <section class="chat-scroll" id="chatScroll">
+        <div class="welcome" id="welcome">
+          <div class="welcome-orb"><span>J</span><i></i></div>
+          <div class="eyebrow"><span class="live-dot"></span> YOUR AI WORKSPACE</div>
+          <h1>Think bigger.<br><em>Build anything.</em></h1>
+          <p>Halo! Aku JACCKSALLAS AI. Tanyakan sesuatu, minta bantuan coding, atau unggah gambar untuk dianalisis.</p>
+          <div class="suggestion-grid">
+            <button class="suggestion" data-prompt="Jelaskan bagaimana cara kerja website dan server secara sederhana."><span>◈</span><strong>Belajar teknologi</strong><small>Jelaskan konsep dengan mudah</small></button>
+            <button class="suggestion" data-prompt="Bantu aku membuat website portfolio responsif. Buat rencana dan contoh kodenya."><span>⌘</span><strong>Bangun website</strong><small>Mulai proyek coding</small></button>
+            <button class="suggestion" data-prompt="Buatkan rencana belajar pemrograman web selama 30 hari untuk pemula."><span>▦</span><strong>Buat rencana</strong><small>Susun langkah belajar</small></button>
+            <button class="suggestion" data-prompt="Apa saja yang bisa kamu lakukan? Berikan contoh kemampuanmu."><span>✧</span><strong>Jelajahi kemampuan</strong><small>Kenali JACCKSALLAS AI</small></button>
+          </div>
+        </div>
+        <div class="messages" id="messages" aria-live="polite"></div>
+        <div class="typing-row hidden" id="typingRow"><span class="typing-dots"><i></i><i></i><i></i></span><span>JACCKSALLAS sedang berpikir...</span></div>
+        <div id="bottomAnchor"></div>
+      </section>
+
+      <footer class="composer-wrap">
+        <div class="attachment-preview hidden" id="attachmentPreview">
+          <img id="attachmentThumb" alt="Preview gambar">
+          <div><strong id="attachmentName">image.jpg</strong><small>Gambar siap dianalisis</small></div>
+          <button class="tiny-btn remove-attachment" id="removeAttachment" aria-label="Hapus gambar">×</button>
+        </div>
+        <div class="composer">
+          <textarea id="messageInput" rows="1" placeholder="Kirim pesan ke JACCKSALLAS AI..." aria-label="Tulis pesan"></textarea>
+          <div class="composer-toolbar">
+            <div class="tools-left">
+              <button class="tool-btn" id="attachBtn" title="Unggah gambar"><span>＋</span> <span class="tool-text">Gambar</span></button>
+              <input type="file" id="imageInput" accept="image/png,image/jpeg,image/webp" hidden>
+              <button class="tool-btn" id="codeModeBtn" title="Aktifkan mode coding"><span>⌘</span> <span class="tool-text">Code mode</span></button>
+              <span class="mode-pill hidden" id="codePill">CODING MODE ON</span>
+            </div>
+            <div class="tools-right">
+              <span class="enter-hint">Enter untuk kirim</span>
+              <button class="send-btn" id="sendBtn" aria-label="Kirim pesan"><span>↑</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="disclaimer">JACCKSALLAS AI dapat membuat kesalahan. Periksa kembali informasi penting.</div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
