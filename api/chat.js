@@ -1,4 +1,3 @@
-
 // JavaScript | api/chat.js | Vercel Node.js Function | Google Gemini API
 
 const MAX_MESSAGES = 14;
@@ -184,7 +183,6 @@ export default async function handler(req, res) {
         contents,
         generationConfig: {
   maxOutputTokens: 1400
-        }
         }
       }),
       signal: AbortSignal.timeout(55000)
